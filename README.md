@@ -35,7 +35,8 @@ realined/
 │   └── realined-review/       # revisión semanal: índice, briefs, contexto vs. código, inbox
 ├── templates/vault/           # plantilla de segundo cerebro: PARA, AGENTS.md, index, log, plantillas
 ├── examples/                  # vault y proyecto FICTICIOS con fallos sembrados para probar
-└── agent/BRIEF.md             # diseño del agente para crearlo con managed-agents-wizard
+├── agent/BRIEF.md             # diseño del agente para crearlo con managed-agents-wizard
+└── scripts/check.py           # comprueba las invariantes de AGENTS.md (también en CI)
 ```
 
 ## Empezar
@@ -53,6 +54,7 @@ Ajusta `AGENTS.md`: tus carpetas, tu taxonomía de etiquetas y lo que el agente 
 ```sh
 mkdir -p ~/.claude/skills && ln -s "$PWD"/skills/realined-* ~/.claude/skills/
 python3 skills/realined-lint/scripts/lint.py examples/demo-vault --today 2026-10-24
+python3 scripts/check.py   # invariantes del repo: 7 comprobaciones, sin dependencias
 ```
 
 Luego, dentro de `examples/demo-vault`, pídele a Claude Code: "haz lint del vault" o "procesa

@@ -1,0 +1,18 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Repository invariants (AGENTS.md)
+        run: python3 scripts/check.py
+      - name: Lint baseline on the demo vault
+        run: python3 skills/realined-lint/scripts/lint.py examples/demo-vault --today 2026-10-24

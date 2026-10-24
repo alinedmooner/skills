@@ -12,6 +12,7 @@ skills/<skill>/        one skill per directory; everything it needs lives inside
 templates/vault/       the vault template people copy; its AGENTS.md is the vault schema
 examples/              fictional demo vault and demo project with seeded faults (examples/README.md)
 agent/BRIEF.md         design input for the managed-agents-wizard skill
+scripts/check.py       checks the invariants below (standard library only); CI runs it on every push and pull request
 agents/realined/       written by managed-agents-wizard (not hand-edited: agent.md, deployment-*.yaml are generated)
 ```
 
@@ -27,3 +28,5 @@ agents/realined/       written by managed-agents-wizard (not hand-edited: agent.
 6. The lint baseline in `examples/README.md` matches the script:
    `python3 skills/realined-lint/scripts/lint.py examples/demo-vault --today 2026-10-24`.
 7. No secrets anywhere. Credentials go to a Managed Agents vault, set by the person in a terminal.
+
+Run `python3 scripts/check.py` before you finish a change. It exits 1 when an invariant fails.
