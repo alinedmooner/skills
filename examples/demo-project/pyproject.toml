@@ -1,0 +1,8 @@
+[project]
+name = "recetas-rag"
+version = "0.2.0"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic==0.69.0",
+    "sqlite-vec==0.1.6",
+]
