@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+tests/out/
+agents/*/tests/out/
+.DS_Store
+__pycache__/
