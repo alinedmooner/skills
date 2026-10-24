@@ -38,8 +38,8 @@ Input: $ARGUMENTS (empty → the working directory, the current ISO week, no pro
 1. **Collect the week.** Read `log.md` entries of the week, `git log --since` the week's Monday
    (files touched, authors), and every note with `updated:` in the week.
 2. **Refresh `index.md`.** One line per area, project and key note: `[[link]] — summary`. Add
-   missing notes, mark moved ones, drop lines whose target is archived (move them under
-   `## Archive`). Keep it scannable on one screen per section.
+   missing notes, update the path of moved ones, and move lines whose target is archived under
+   `## Archive`. Keep it scannable on one screen per section.
 3. **Refresh each active project's `brief.md`.** Sections the agent maintains: `## Estado`
    (status, from the week's log and experiments) and `## Enlaces`. Other sections are the
    person's: propose changes in the review. Set `updated:`.
@@ -49,7 +49,8 @@ Input: $ARGUMENTS (empty → the working directory, the current ISO week, no pro
    README). List each mismatch: claim, note, evidence file and line. Do not fix the claim.
    Claude Code's `AGENTS.md`/`CLAUDE.md` in the project repo is evidence too.
 5. **Triage the inbox.** For every item in `00-inbox/`: destination in PARA with a reason, or
-   "no destination". An item with "no destination" in two reviews in a row gets "propose delete".
+   "no destination". An item with "no destination" in two reviews in a row (check the previous
+   review note in `90-meta/reviews/`, or the caller's memory) gets "propose delete".
 6. **Flag stale facts.** Notes with `checked:` older than 60 days, and prices or limits without
    `checked:`. List them with the official URL to check. Do not change values.
 7. **Draft lessons** for each project whose brief says closed, or with no log entry for 30 days:

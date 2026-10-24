@@ -101,9 +101,11 @@ def parse_date(value) -> dt.date | None:
 
 
 def walk(vault: Path):
+    """Every file except those under SKIP_DIRS or a hidden directory (tool config, never notes)."""
     for p in sorted(vault.rglob("*")):
         rel = p.relative_to(vault)
-        if any(part in SKIP_DIRS for part in rel.parts) or not p.is_file():
+        dirs = rel.parts[:-1]
+        if any(d in SKIP_DIRS or d.startswith(".") for d in dirs) or not p.is_file():
             continue
         yield p, rel
 

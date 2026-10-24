@@ -63,6 +63,6 @@ Required on every note except root files: `type`, `status`, `summary`, `updated`
 
 ```
 ## [2026-10-24] ingest | Charla sobre evals (30-resources/raw/2026-10-24-charla-evals.pdf)
-## [2026-10-24] lint | 3 errors fixed, 5 proposals
+## [2026-10-24] lint | 3 findings fixed, 5 proposals
 ## [2026-10-26] review | week 2026-W43
 ```
