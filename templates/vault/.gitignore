@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+.smart-env/
+.obsidian/workspace*
+.obsidian/cache
+.trash/
+.DS_Store

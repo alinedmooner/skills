@@ -1,0 +1,3 @@
+interface:
+  display_name: "realined lint"
+  short_description: "Check and safely fix a Markdown second brain: frontmatter, links, tags, secrets"
